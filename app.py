@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 CORS(app)  
 
+load_dotenv()
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY")
 
 # Załaduj model CLIP
