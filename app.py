@@ -23,6 +23,9 @@ model, preprocess = clip.load("ViT-B/32", device=device)
 # Lista etykiet do wykrycia
 labels = ["keyboard", "mechanical switch", "PCB", "tools", "keycaps", "mechanical keyboard stabilizer "]
 
+print("Hello world!")
+print("api key = " + TOGETHER_API_KEY)
+
 @app.route("/classify", methods=["POST"])
 def classify_image():
     if "file" not in request.files:
