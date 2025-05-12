@@ -11,7 +11,11 @@ import re
 from dotenv import load_dotenv
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app,
+     origins=["https://keebit.vercel.app"],
+     supports_credentials=True,
+     allow_headers=["Content-Type"],
+     methods=["GET", "POST", "OPTIONS"])
 
 load_dotenv()
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY")
