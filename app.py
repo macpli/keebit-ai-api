@@ -12,8 +12,9 @@ from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app,
-     origins=["https://keebit.vercel.app"],
+     resources={r"/*": {"origins": ["https://keebit.vercel.app"]}},
      supports_credentials=True,
+     expose_headers=["Content-Type"],
      allow_headers=["Content-Type"],
      methods=["GET", "POST", "OPTIONS"])
 
